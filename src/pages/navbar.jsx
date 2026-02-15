@@ -248,7 +248,7 @@ function Navbar() {
               />
             </div>
             <h1 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent">
-              Fresh Bites
+              Cappsra Foods
             </h1>
           </Link>
 
@@ -472,5 +472,6 @@ function Navbar() {
     </>
   );
 }
+
 
 export default Navbar;
