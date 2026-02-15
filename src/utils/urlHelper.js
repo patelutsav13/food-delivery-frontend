@@ -24,3 +24,4 @@ export const getImageUrl = (imagePath) => {
 
     return `${cleanBase}${cleanPath}`;
 };
+
