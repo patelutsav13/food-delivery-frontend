@@ -8,6 +8,8 @@ import Navbar from "./navbar";
 import Footer from "./Footer";
 import CommonBanner from "./CommonBanner";
 
+import { getImageUrl } from "../utils/urlHelper";
+
 const Foods = () => {
   const dispatch = useDispatch();
   const [searchTerm, setSearchTerm] = useState("");
@@ -58,7 +60,7 @@ const Foods = () => {
       id: food._id,
       title: food.name,
       price: food.price,
-      image: food.image,
+      image: getImageUrl(food.image),
       category: food.category
     }));
   };
@@ -128,7 +130,7 @@ const Foods = () => {
                 {/* Product Image */}
                 <div className="relative h-48 w-full mb-6 flex items-center justify-center bg-slate-50 rounded-2xl overflow-hidden group-hover:bg-red-50/30 transition-colors">
                   <img
-                    src={item.image}
+                    src={getImageUrl(item.image)}
                     alt={item.name}
                     className="h-40 w-full object-contain drop-shadow-md group-hover:scale-110 transition-transform duration-500 mix-blend-multiply"
                   />
@@ -182,8 +184,8 @@ const Foods = () => {
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={currentPage === 1}
               className={`flex items-center gap-2 px-6 py-3 rounded-xl font-bold transition-all duration-300 ${currentPage === 1
-                  ? "bg-slate-100 text-slate-400 cursor-not-allowed"
-                  : "bg-white text-slate-700 hover:bg-red-50 hover:text-red-500 shadow-sm hover:shadow-md"
+                ? "bg-slate-100 text-slate-400 cursor-not-allowed"
+                : "bg-white text-slate-700 hover:bg-red-50 hover:text-red-500 shadow-sm hover:shadow-md"
                 }`}
             >
               <ChevronLeft className="w-5 h-5" /> Prev
@@ -195,8 +197,8 @@ const Foods = () => {
                   key={index + 1}
                   onClick={() => handlePageChange(index + 1)}
                   className={`w-12 h-12 flex items-center justify-center rounded-xl font-bold transition-all duration-300 ${currentPage === index + 1
-                      ? "bg-red-500 text-white shadow-lg shadow-red-200 scale-110"
-                      : "bg-white text-slate-700 hover:bg-slate-50 shadow-sm"
+                    ? "bg-red-500 text-white shadow-lg shadow-red-200 scale-110"
+                    : "bg-white text-slate-700 hover:bg-slate-50 shadow-sm"
                     }`}
                 >
                   {index + 1}
@@ -208,8 +210,8 @@ const Foods = () => {
               onClick={() => handlePageChange(currentPage + 1)}
               disabled={currentPage === totalPages}
               className={`flex items-center gap-2 px-6 py-3 rounded-xl font-bold transition-all duration-300 ${currentPage === totalPages
-                  ? "bg-slate-100 text-slate-400 cursor-not-allowed"
-                  : "bg-white text-slate-700 hover:bg-red-50 hover:text-red-500 shadow-sm hover:shadow-md"
+                ? "bg-slate-100 text-slate-400 cursor-not-allowed"
+                : "bg-white text-slate-700 hover:bg-red-50 hover:text-red-500 shadow-sm hover:shadow-md"
                 }`}
             >
               Next <ChevronRight className="w-5 h-5" />
