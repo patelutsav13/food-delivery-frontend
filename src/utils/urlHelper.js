@@ -1,6 +1,6 @@
 
 export const getImageUrl = (imagePath) => {
-    if (!imagePath) return "https://placehold.co/400x300?text=No+Image";
+    if (!imagePath) return "https://via.placeholder.com/400x300?text=No+Image";
 
     // If it's already a full URL (http/https), check if it's localhost
     if (imagePath.startsWith('http')) {
