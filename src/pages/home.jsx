@@ -44,6 +44,8 @@ const getCategoryIcon = (categoryName) => {
   return iconMap[categoryName] || '🍽️';
 };
 
+import { getImageUrl } from "../utils/urlHelper";
+
 const testimonials = [
   {
     id: 1,
@@ -92,7 +94,7 @@ function Home() {
       id: product._id,
       title: product.name,
       price: product.price,
-      image: product.image,
+      image: getImageUrl(product.image),
       category: product.category
     }));
   };
@@ -235,7 +237,7 @@ function Home() {
               {/* Product Image */}
               <div className="relative h-48 w-full mb-6 flex items-center justify-center bg-slate-50 rounded-2xl overflow-hidden">
                 <img
-                  src={item.image}
+                  src={getImageUrl(item.image)}
                   alt={item.name}
                   className="h-40 w-full object-contain drop-shadow-md group-hover:scale-110 transition-transform duration-500 mix-blend-multiply"
                 />
