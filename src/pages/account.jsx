@@ -37,7 +37,7 @@ const Account = () => {
       if (response.data.success) {
         navigate('/admin'); // Redirect to login
       } else {
-        setError(response.data.message || 'Registration failed');
+        setError(response.data.message || 'Registration Successful');
       }
     } catch (err) {
       console.error('Registration Error:', err);
@@ -148,3 +148,4 @@ const Account = () => {
 };
 
 export default Account;
+
