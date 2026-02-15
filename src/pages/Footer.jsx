@@ -17,7 +17,7 @@ const Footer = () => {
                 <div className="absolute inset-0 bg-red-500 rounded-full opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
               </div>
               <span className="font-bold text-xl lg:text-4xl text-gray-900 hover:text-red-600 transition-colors duration-300">
-                Fresh Bites
+                Cappsra Foods
               </span>
             </div>
             <p className="text-gray-600 text-sm lg:text-2xl leading-relaxed">
@@ -128,4 +128,5 @@ const SocialIcon = ({ children }) => (
 )
 
 export default Footer
+
 
